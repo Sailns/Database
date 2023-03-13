@@ -1,0 +1,24 @@
+SQL> 
+SQL> INSERT INTO kategorie (id_kategorii, nazwa, opis) VALUES (1, 'Administracyjne', 'Sluza do zadan administrowania systemem');
+
+Error starting at line : 6 in command -
+INSERT INTO kategorie (id_kategorii, nazwa, opis) VALUES (1, 'Administracyjne', 'Sluza do zadan administrowania systemem')
+Error report -
+ORA-00001: naruszono więzy unikatowe (BD2C061.KATG_PK)
+
+SQL> INSERT INTO moduly (id_modulu, nazwa, id_pracownika, id_czynnosci_nadrz, data_zatwierdzenia) VALUES ('3', 'Update', '11', '3', '01.11.22');
+
+Error starting at line : 7 in command -
+INSERT INTO moduly (id_modulu, nazwa, id_pracownika, id_czynnosci_nadrz, data_zatwierdzenia) VALUES ('3', 'Update', '11', '3', '01.11.22')
+Error report -
+ORA-00001: naruszono więzy unikatowe (BD2C061.MOD_PK)
+
+SQL> DELETE FROM moduly WHERE nazwa='Zapotrzebowania';
+
+Error starting at line : 9 in command -
+DELETE FROM moduly WHERE nazwa='Zapotrzebowania'
+Error report -
+ORA-02292: naruszono więzy spójności (BD2C061.CZYN_MOD_FK) - znaleziono rekord podrzędny
+
+SQL> 
+SQL> spool off

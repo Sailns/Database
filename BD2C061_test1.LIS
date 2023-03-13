@@ -1,0 +1,88 @@
+SQL> 
+SQL> SELECT pracownicy.nazwisko, pracownicy.pesel FROM pracownicy WHERE pesel IS NOT NULL;
+
+NAZWISKO             PESEL      
+-------------------- -----------
+Bartosz              75110877651
+Bruj                 94120435623
+Bujalski             88012274372
+Kinasz               91100141588
+Kisz                 68091575615
+Krutko               90110677518
+May                  75051668122
+Okon                 93010155452
+Paczoski             96120435623
+Palka                66091587141
+Sobczak              94120674373
+Sultanov             95091577518
+Trek                 93110141782
+Walas                88012157143
+Wolak                82032175162
+Wolski               96030475629
+
+16 rows selected. 
+
+SQL> SELECT pracownicy.Imie, pracownicy.nazwisko FROM pracownicy;
+
+IMIE            NAZWISKO            
+--------------- --------------------
+Beata           Bartosz             
+Kasia           Bruj                
+Kamil           Bujalski            
+Maria           Kinasz              
+Ada             Kisz                
+Adam            Krutko              
+Maciej          May                 
+Jan             Okon                
+Karolina        Paczoski            
+Marta           Palka               
+Piotr           Sobczak             
+Vadym           Sultanov            
+Yusuf           Trek                
+Dawid           Walas               
+Maciej          Wolak               
+Bartek          Wolski              
+
+16 rows selected. 
+
+SQL> SELECT pracownicy.Imie, pracownicy.data_urodzenia, pracownicy.pesel FROM pracownicy WHERE Imie = 'Maciej';
+
+IMIE            DATA_URO PESEL      
+--------------- -------- -----------
+Maciej          21.03.82 82032175162
+Maciej          16.05.75 75051668122
+
+SQL> SELECT kategorie.nazwa, kategorie.opis FROM kategorie WHERE Nazwa = 'Zakupy';
+
+NAZWA
+----------------------------------------
+OPIS                                                                                                                                                                                                                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Zakupy                                   
+Zarzadzanie procesem zakupowym.                                                                                                                                                                                                                                                                             
+
+
+SQL> SELECT pracownicy.id_pracownika, pracownicy.adres_email FROM pracownicy WHERE id_pracownika BETWEEN 5 AND 10;
+
+ID_PRACOWNIKA ADRES_EMAIL                        
+------------- -----------------------------------
+            5 janokon@gmail.com                  
+            6 adamkrutko@gmail.com               
+            7 vadymsultanov@gmail.com            
+            8 martapalka@gmail.com               
+            9 beatabartosz@gmail.com             
+           10 piotrsobczak@gmail.com             
+
+6 rows selected. 
+
+SQL> SELECT czynnosci.id_pracownika, czynnosci.nazwa FROM czynnosci WHERE id_pracownika BETWEEN 1 AND 7;
+
+ID_PRACOWNIKA NAZWA                                                                                               
+------------- ----------------------------------------------------------------------------------------------------
+            1 Zapotrzebowanie                                                                                     
+            2 Update 1C                                                                                           
+            5 Faktura zakupu                                                                                      
+            7 Dostep                                                                                              
+
+SQL> 
+SQL> spool off
